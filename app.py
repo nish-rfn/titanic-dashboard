@@ -97,6 +97,7 @@ def draw_dashboard(choice):
     ports = survival_table(data.Embarked.map(PORT_NAMES), data.Survived, list(PORT_NAMES.values()))
     stacked_bars(axes["port"], ports, "Cherbourg did best" if is_all else "Survival by boarding port",
                  "% on top = share who survived", "Boarding port")
+    axes["port"].tick_params(axis="x", labelsize=9)
 
     badge(fig, 0.03, 0.06, 1)
     fig.text(0.06, 0.06, "This dashboard is for museum visitors, many of whom have never studied\nstatistics and will only stop at the screen for about a minute.",
